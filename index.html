@@ -1397,7 +1397,7 @@
             
             <form id="rsvpForm">
                 <p style="color: red; font-size: 0.85rem; font-style: italic; margin-bottom: 15px;" data-i18n="rsvp-req">* vui lòng nhập đầy đủ nội dung</p>
-                <input type="text" id="rsvp-name-input" data-i18n="rsvp-name-pl" placeholder="Tên của bạn *..." required>
+                <input type="text" id="rsvp-name-input" data-i18n="rsvp-name-pl" placeholder="Tên của cụ *..." required>
                 
                 <div id="plus-ones-container"></div>
                 <button type="button" class="btn-add-plus" id="btn-add-plusone" data-i18n="rsvp-add">+ Thêm người đi cùng</button>
@@ -1438,8 +1438,8 @@
             <div class="gb-box">
                 <h3 class="box-title" style="margin-bottom: 20px; font-size: 1.3rem;" data-i18n="gb-form-title">Gửi Lời Chúc</h3>
                 <form id="wish-form" class="gb-form">
-                    <input type="text" name="Ten" id="guest-name-input" data-i18n="gb-name" placeholder="Tên của bạn..." required>
-                    <textarea name="LoiChuc" id="guest-wish-input" data-i18n="gb-wish" placeholder="Nhập lời chúc của bạn tới cô dâu và chú rể..." required></textarea>
+                    <input type="text" name="Ten" id="guest-name-input" data-i18n="gb-name" placeholder="Tên của cụ..." required>
+                    <textarea name="LoiChuc" id="guest-wish-input" data-i18n="gb-wish" placeholder="Nhập lời chúc của cụ tới các cháu..." required></textarea>
                     <button type="submit" class="btn-submit-wish" id="btn-submit" data-i18n="gb-btn">Gửi Lời Chúc</button>
                     <p id="form-msg" style="margin-top: 10px; font-size: 0.9rem; color: var(--btn-color); display: none;"></p>
                 </form>
@@ -1511,7 +1511,7 @@
                 "rsvp-btn": "XÁC NHẬN THAM GIA",
                 "rsvp-modal-title": "Xác Nhận Tham Gia",
                 "rsvp-req": "* vui lòng nhập đầy đủ nội dung",
-                "rsvp-name-pl": "Tên của bạn *...",
+                "rsvp-name-pl": "Tên của cụ *...",
                 "rsvp-add": "+ Thêm người đi cùng",
                 "rsvp-ans": "Répondez s'il vous plaît",
                 "cb-hcm-le": " xác nhận tham gia lễ thành hôn tại TPHCM",
@@ -1524,8 +1524,8 @@
                 "rsvp-submit": "XÁC NHẬN",
                 "gb-title": "Sổ Lưu Bút",
                 "gb-form-title": "Gửi Lời Chúc",
-                "gb-name": "Tên của bạn...",
-                "gb-wish": "Nhập lời chúc của bạn tới cô dâu và chú rể...",
+                "gb-name": "Tên của cụ...",
+                "gb-wish": "Nhập lời chúc của cụ tới các cháu...",
                 "gb-btn": "Gửi Lời Chúc",
                 "gb-list-title": "Lời Chúc Yêu Thương",
                 "gb-loading": "Đang tải lời chúc...",
@@ -1657,7 +1657,7 @@
             // Xử lý thông báo submit (nếu có)
             const formMsg = document.getElementById('form-msg');
             if (formMsg.style.display === 'block') {
-                if (formMsg.style.color === 'green') formMsg.innerText = lang === 'vi' ? 'Gửi lời chúc thành công! Cảm ơn bạn.' : 'Wishes sent successfully! Thank you.';
+                if (formMsg.style.color === 'green') formMsg.innerText = lang === 'vi' ? 'Gửi lời chúc thành công!' : 'Wishes sent successfully! Thank you.';
                 else formMsg.innerText = lang === 'vi' ? 'Có lỗi xảy ra, vui lòng thử lại sau!' : 'An error occurred, please try again later!';
             }
         }
@@ -1829,7 +1829,7 @@
                 .then(response => {
                     formMsg.style.display = 'block';
                     formMsg.style.color = 'green';
-                    formMsg.innerText = currentLang === 'vi' ? 'Gửi lời chúc thành công! Cảm ơn bạn.' : 'Wishes sent successfully! Thank you.';
+                    formMsg.innerText = currentLang === 'vi' ? 'Gửi lời chúc thành công!' : 'Wishes sent successfully! Thank you.';
                     wishForm.reset();
                     btnSubmitWish.innerText = currentLang === 'vi' ? 'Gửi Lời Chúc' : 'Send Wishes';
                     btnSubmitWish.disabled = false;
@@ -1960,7 +1960,7 @@
             e.preventDefault();
             
             const typedName = document.getElementById('rsvp-name-input').value.trim();
-            const userFinalName = typedName || guestName || 'bạn';
+            const userFinalName = typedName || guestName || 'Cụ';
 
             const isHCM_Le = document.querySelector('input[value="TPHCM_Le"]')?.checked || false;
             const isHCM_Tiec = document.querySelector('input[value="TPHCM_Tiec"]')?.checked || false;
